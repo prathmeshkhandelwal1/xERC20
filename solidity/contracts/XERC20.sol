@@ -45,8 +45,6 @@ contract XERC20 is ERC20, AccessControl, IXERC20, ERC20Permit, Ownable {
   ) ERC20(string.concat('x', _name), string.concat('x', _symbol)) ERC20Permit(string.concat('x', _name)) {
     _transferOwnership(_factory);
     FACTORY = _factory;
-    grantRole(SET_LIMITS_ROLE, FACTORY);
-    grantRole(SET_LIMITS_ROLE, msg.sender);
   }
 
   /**
